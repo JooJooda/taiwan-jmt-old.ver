@@ -6,6 +6,8 @@
     <title>대만 여행 꿀팁 쇼핑하기</title>
     <link rel="stylesheet" href="./main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- 도메인 설정하기 -->
+    <script src="https://kit.fontawesome.com/6adc069fa2.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-body fixed-top">
@@ -17,13 +19,13 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbar-item">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">소개</a>
+                    <a class="nav-link text-dark" href="#">로그인</a>
                   </li>
               <li class="nav-item">
-                <a class="nav-link text-dark" href="#">로그인</a>
+                <a class="nav-link text-dark" href="#">여행 장바구니</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark" href="#">여행 장바구니</a>
+                <a class="nav-link text-dark" href="#">About</a>
               </li>
             </ul>
           </div>
@@ -31,54 +33,54 @@
       </nav>
 
       <div id="main-banner-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#main-banner-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#main-banner-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#main-banner-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#main-banner-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
         <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="4000">
-            <img src="./img/1.jpg" class="d-block w-100" alt="img-1">
+          <div class="carousel-item active" data-bs-interval="8000">
+            <img src="./banner/TraveltoTaiwan_md.png" class="d-block d-md-none w-100" alt="img-1">
+            <img src="./banner/TraveltoTaiwan.png" class="d-none d-md-block w-100" alt="img-1">
           </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img src="./img/2.jpg" class="d-block w-100" alt="img-2">
+          <div class="carousel-item" data-bs-interval="8000">
+            <img src="./banner/Breakfastmenu_md.png" class="d-block d-md-none w-100" alt="img-2">
+            <img src="./banner/Breakfastmenu.png" class="d-none d-md-block w-100" alt="img-2">
           </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img src="./img/3.jpg" class="d-block w-100" alt="img-3">
+          <div class="carousel-item" data-bs-interval="8000">
+            <img src="./banner/TaiwanDessert_md.png" class="d-block d-md-none w-100" alt="img-3">
+            <img src="./banner/TaiwanDessert.jpg" class="d-none d-md-block w-100" alt="img-3">
+          </div>
+          <div class="carousel-item" data-bs-interval="8000">
+            <img src="./banner/TaiwanNightmarket_md.png" class="d-block d-md-none w-100" alt="img-4">
+            <img src="./banner/TaiwanNightmarket.png" class="d-none d-md-block w-100" alt="img-4">
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#main-banner-carousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#main-banner-carousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-      
+
+
       <div class="container-fluid text-center">
         <div class="row">
           <div class="col-12 p-5">
-            <h1>대만여행 꿀팁을 쇼핑해보세요!</h1>
+            <h1>대만여행 꿀팁 쇼핑하기</h1>
           </div>
         </div>
       </div>
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12 p-2">
-            <h4> 당신이 대만여행을 좀 더 알차게 즐길 수 있도록 꿀팁들을 이 웹사이트에 알차게 정리해놓았어요
-              <br>
-              원하는 꿀팁들을 여행 장바구니에 담아 나의 대만 여행 계획표를 완성해보세요
-            </h4>
-          </div>
-        </div>
+      <div class="container bg-body-tertiary">
+        <form class="d-flex flex-row p-2" role="search">
+          <input class="form-control me-2" type="search" placeholder="대만 명소&음식을 검색해보세요!" aria-label="Search">
+          <button class="btn btn-outline-success ratio-1x1" id="search" type="submit" onclick=""></button>
+        </form>
       </div>
 
-
-    
       <div class="row justify-content-center">
             <div class="card m-3 p-0" style="width: 40rem;">
               <a href="./attraction.html">
-               <img src="./img/2.jpg" class="card-img-top col-12 col-md-6" alt="img-2">
+               <img src="" class="card-img-top col-12 col-md-6" alt="대만 명소 구경하기">
                <div class="card-body">
-                 <p class="card-text">대만에서 어디가지?</p>
+                 <p class="card-text">대만 명소 구경하기</p>
                </div>
               </a>
             </div> 
@@ -86,14 +88,40 @@
           
             <div class="card m-3 p-0" style="width: 40rem;">
               <a href="./food.html">
-               <img src="./img/1.jpg" class="card-img-top col-12 col-md-6" alt="img-1">
+               <img src="" class="card-img-top col-12 col-md-6" alt="대만 미식 구경하기">
                <div class="card-body">
-                 <p class="card-text">대만에서 뭐 먹지?</p>
+                 <p class="card-text">대만 미식 구경하기</p>
                </div>
              </a>
             </div>
       </div>
     
+
+      <div class="container-fluid bg-body-secondary">
+        <footer class="py-5">
+          <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Menu</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">여행 장바구니</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-6 col-md-2 mb-3">
+              <h5>Link</h5>
+              <div class="instagram" href=""> Instagram</div>
+            </div>
+      
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-3 my-4 border-top">
+            <p>2024 Copyright &copy; JooJooda. All rights reserved.</p>
+            <p>Author : JooJooda</p>
+            <p id="visitors"></p>
+          </div>
+        </footer>
+
+       
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
