@@ -1,30 +1,98 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-
-.banner{
-    background-image: url(./img/3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:50vh;
-}
-
-.breadcrumb-item>a{
-    text-decoration: none;
-    color: grey;
+.titleArea{
+    margin-top: 56px;
+    font-size: 1.3rem;
 }
 
 .breadcrumb{
     --bs-breadcrumb-item-active-color:black;
+    margin-right: 2rem;
+}
+
+.breadcrumb-item>a{
+    text-decoration: none;
+}
+
+.breadcrumb-item>:active{
+   /* 수정필요 */
+}
+
+#food-category-item{
+    font-size: 0.5rem;
+    width:2rem;
+    margin:0;
+    padding:0.1rem;
+    border:0;
+}
+
+
+#recmd{
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#naviBtn{
+    position: static;
+    margin:1rem;
+    width:3rem;
+    height:3rem;
+    border: 1px solid #e5e5e5; 
+    background-color: white;
+    color:black;
+} 
+
+.swiper-button-next:after,.swiper-button-prev:after{
+    font-size: initial!important;
+}
+
+.swiper-button-prev.swiper-button-disabled,.swiper-button-next.swiper-button-disabled{
+    opacity: initial!important;
 }
 
 .prdList{
     list-style: none;
+    padding:0;
+    margin:0;
 }
 
-.dsc-ele{
+.nameHighlight{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.review{
+    font-weight: bolder;
+    color: grey;
+}
+
+.comment-ele{
     list-style: none;
+    font-size: 0.5rem;
+    margin:0;
+    padding:0;
 }
 
+.comment>a{
+    text-decoration: none;
+    color: black;
+}
+
+
+@media screen and (max-width:576px){
+    #food-category-item{
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (min-width:576px){
+    #food-category-item{
+        justify-content: center;
+    }
+}
