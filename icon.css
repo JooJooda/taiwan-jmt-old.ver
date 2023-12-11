@@ -18,4 +18,8 @@
   #attraction::before{
       font-family: "FontAwesome"; content:"\f1ad"
   }
+
+  .cart::before{
+    font-family: "FontAwesome"; content:"\f07a"
+  }
   

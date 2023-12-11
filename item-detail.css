@@ -1,0 +1,52 @@
+.navbar-toggler{
+    border: 0 !important;
+}
+
+.swiper-button-prev,.swiper-button-next{
+
+}
+
+.swiper-scrollbar-drag{
+    --swiper-scrollbar-drag-bg-color:white;
+    border-radius: 0px!important;
+}
+
+.swiper-scrollbar{
+    --swiper-scrollbar-bg-color: black;
+    --swiper-scrollbar-border-radius: 1px;
+    width:90%!important;
+    height: 0.3rem!important;
+    position: absolute;
+    bottom:10px!important;
+    left: 17px!important;
+    
+}
+
+.cart{
+    margin:1.8rem;
+    padding:1.5rem;    
+    border:0;
+}
+
+.title{
+    font-size:1.5rem;
+    font-weight: bolder;
+    margin:1.8rem;
+}
+
+.info{
+    font-size:1rem;
+    margin:1.8rem;
+}
+
+.menu,.place,.googleMap{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+
+#detail,#order,#review{
+    border:1px solid rgba(0, 0, 0, 0.1);
+    padding:0.6rem;
+    font-size: 1rem;
+}

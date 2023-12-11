@@ -3,8 +3,7 @@
 }
 
 .mainBanner{
-    margin-top: 56px;
-    /* height: 수정필요 */
+   
 }
 
 .swiper-pagination-bullet {
@@ -16,5 +15,5 @@
 }
 
 .titleArea{
-    font-size: 1.5rem;
+    font-size:1.8rem;
 }

@@ -25,7 +25,7 @@ var swiper = new Swiper(".recmd", {
     },
     1024:{
       slidesPerView:5,
-      spaceBetween:30
+      spaceBetween:20
     }
   },
 
