@@ -1,9 +1,5 @@
-.navbar-toggler{
-    border: 0 !important;
-}
-
-.mainBanner{
-   
+.title-area{
+    font-size: 1.4rem;
 }
 
 .swiper-pagination-bullet {
@@ -12,8 +8,4 @@
   
 .swiper-pagination-bullet-active {
     background: white!important;
-}
-
-.titleArea{
-    font-size:1.8rem;
 }

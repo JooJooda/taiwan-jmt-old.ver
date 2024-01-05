@@ -1,0 +1,75 @@
+.title-area{
+    font-size: 1.4rem;
+}
+
+#recmd-title, #list-title{
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.custom-swiper-button-next,.custom-swiper-button-prev{
+    position: static;
+    margin:1rem;
+    width:3rem;
+    height:3rem;
+    border: 1px solid #e5e5e5; 
+    background-color: white;
+    color:black;
+}
+
+.swiper-scrollbar-drag{
+    --swiper-scrollbar-drag-bg-color:white;
+}
+
+.swiper-scrollbar{
+    --swiper-scrollbar-bg-color: black;
+    height: 0.2rem!important;
+    --swiper-scrollbar-border-radius: 0;
+}
+
+@media screen and (max-width:768px){
+.swiper-scrollbar{
+    display:block;
+}       
+}
+
+@media screen and (min-width:768px){
+.swiper-scrollbar{
+    display:none;
+}       
+}
+
+.item-list{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+.highlight{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.review{
+    font-weight: bolder;
+    color: grey;
+}
+
+.comment-ele{
+    list-style: none;
+    font-size: 0.8rem;
+    margin:0;
+    padding:0;
+}
+
+.comment>a{
+    text-decoration: none;
+    color: black;
+}

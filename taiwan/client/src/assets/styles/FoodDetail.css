@@ -1,8 +1,6 @@
-.navbar-toggler{
-    border: 0 !important;
-}
 
-.swiper-button-prev,.swiper-button-next{
+
+/* .swiper-button-prev,.swiper-button-next{
     --swiper-navigation-color: white; 
 }
 
@@ -14,7 +12,7 @@
 .swiper-scrollbar{
     --swiper-scrollbar-bg-color: black;
     height: 0.3rem!important;
-}
+} */
 
 .swiper-slide img{
     width:100%;
@@ -28,7 +26,7 @@
 }
 
 .title{
-    font-size:1.5rem;
+    font-size:1.6rem;
     font-weight: bolder;
     margin:1.8rem;
 }
