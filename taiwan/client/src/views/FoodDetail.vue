@@ -1,30 +1,32 @@
 <template>
    <div class="Box d-md-flex justify-content-center">
-      <div class="swiper item-photo col-md-6">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="../assets/images/food/가리비만두.jpg">
-          </div>
-          <div class="swiper-slide">
-            <img src="../assets/images/food/가리비만두2.jpg">
-          </div>
-          <div class="swiper-slide">
-            <img src="../assets/images/food/가리비만두.jpg">
-          </div>
-        </div>
-                                                                                                                                                                                                    
-        <div class="swiper-button-prev d-none d-md-block"></div>
-        <div class="swiper-button-next d-none d-md-block"></div>
-        <div class="swiper-scrollbar"></div>
-        
-      </div>
+      <swiper
+      :scrollbar="{
+        draggable:false,
+        dragSize:150, 
+      }"
+      :navigation="{
+        clickable:true
+      }"
+      :modules="modules" 
+      class="item-photo">
+        <swiper-slide>
+          <img src="../assets/images/food/가리비만두.jpg">
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/food/가리비만두2.jpg">
+        </swiper-slide>
+        <swiper-slide>
+          <img src="../assets/images/food/가리비만두.jpg">
+        </swiper-slide>
+      </swiper> 
       
       <div class="item-info col-md-6 d-flex flex-column justify-content-start">
         <div class="title">
           가리비가 통으로 들어간 가리비 만두
         </div>
 
-        <div class="info">
+        <div class="content">
           <div class="menu row">
             <div class="col-3 col-md-4">메뉴</div>
             <div class="col-9 col-md-8">가리비만두 (干貝水餃）</div>
@@ -46,17 +48,14 @@
         </div>
 
         <div class="container d-none d-md-flex justify-content-center">
-          <button class="cart"> 여행 장바구니 담기</button>
+          <button class="cart-button col-9"> 여행 장바구니 담기</button>
         </div>
-
-
       </div>
     </div>
   
-      <div class="info-detail row text-center py-5">
-        <div id="detail" class="col-4">상세설명</div>
-        <div id="order" class="col-4">추천 주문조합</div>
-        <div id="review" class="col-4">후기</div>
+      <div class="detail-nav row text-center py-5">
+        <div id="detail" class="col-6">상세설명</div>
+        <div id="order" class="col-6">추천 주문조합</div>
       </div>
 
 
@@ -66,8 +65,25 @@
 </template>
   
 <script>
+//swiper
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
 
+import { Navigation, Scrollbar } from 'swiper/modules';
+import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
 
+export default{
+  components:{
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+      return {
+        modules: [Navigation, Scrollbar],
+      };
+  },
+}
 </script>
 
 <style scoped>

@@ -76,8 +76,7 @@
             <div class="comment">
               <a href="">
                 <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>
-                 <li class="review mb-1">별점: 리뷰:</li>                
+                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>               
                 </ul>
               </a>
             </div>
@@ -93,8 +92,7 @@
             <div class="comment">
               <a href="">
                 <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>
-                 <li class="review mb-1">별점: 리뷰:</li>                
+                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>             
                 </ul>
               </a>
             </div>
@@ -110,8 +108,7 @@
             <div class="comment">
               <a href="">
                 <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>
-                 <li class="review mb-1">별점: 리뷰:</li>                
+                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>               
                 </ul>
               </a>
             </div>
@@ -127,8 +124,7 @@
             <div class="comment">
               <a href="">
                 <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>
-                 <li class="review mb-1">별점: 리뷰:</li>                
+                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>             
                 </ul>
               </a>
             </div>
@@ -144,8 +140,7 @@
             <div class="comment">
               <a href="">
                 <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>
-                 <li class="review mb-1">별점: 리뷰:</li>                
+                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>             
                 </ul>
               </a>
             </div>
@@ -161,8 +156,7 @@
             <div class="comment">
               <a href="">
                 <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>
-                 <li class="review mb-1">별점: 리뷰:</li>                
+                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>            
                 </ul>
               </a>
             </div>
@@ -185,8 +179,7 @@
         <div class="comment">
           <a href="">
             <ul class="comment-ele">
-             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>
-             <li class="review mb-1">별점: 리뷰:</li>                
+             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>         
             </ul>
           </a>
         </div>
@@ -201,8 +194,7 @@
         <div class="comment">
           <a href="">
             <ul class="comment-ele">
-             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>
-             <li class="review mb-1">별점: 리뷰:</li>                
+             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>            
             </ul>
           </a>
         </div>
@@ -217,8 +209,7 @@
         <div class="comment">
           <a href="">
             <ul class="comment-ele">
-             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>
-             <li class="review mb-1">별점: 리뷰:</li>                
+             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>             
             </ul>
           </a>
         </div>
@@ -233,8 +224,7 @@
         <div class="comment">
           <a href="">
             <ul class="comment-ele">
-             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>
-             <li class="review mb-1">별점: 리뷰:</li>                
+             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>              
             </ul>
           </a>
         </div>

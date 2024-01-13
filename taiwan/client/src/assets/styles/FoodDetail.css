@@ -1,28 +1,28 @@
-
-
-/* .swiper-button-prev,.swiper-button-next{
+.swiper-button-prev,.swiper-button-next{
     --swiper-navigation-color: white; 
 }
-
-
+ 
 .swiper-scrollbar-drag{
     --swiper-scrollbar-drag-bg-color:white;
 }
 
 .swiper-scrollbar{
     --swiper-scrollbar-bg-color: black;
-    height: 0.3rem!important;
-} */
-
-.swiper-slide img{
-    width:100%;
-    height:100%;
+    height: 0.2rem!important;
+    --swiper-scrollbar-border-radius: 0;
 }
 
-.cart{
+
+.cart-button{
     margin:1.8rem;
     padding:1.5rem;    
     border:0;
+    font-size:1.4rem;
+    
+}
+
+.item-info{
+    text-align: left;
 }
 
 .title{
@@ -31,18 +31,23 @@
     margin:1.8rem;
 }
 
-.info{
-    font-size:1rem;
+.content{
     margin:1.8rem;
 }
 
 .menu,.description,.place,.googleMap{
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size:1.3rem;
 }
 
-#detail,#order,#review{
+#detail,#order{
     border:1px solid rgba(0, 0, 0, 0.1);
     padding:0.6rem;
     font-size: 1rem;
+}
+
+@media screen and (min-width:1024px){
+  .item-photo,.item-info{
+    margin:3rem;
+  }
 }
