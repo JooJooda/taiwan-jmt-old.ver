@@ -1,3 +1,9 @@
+<!-- 해결필요한 이슈들 -->
+<!-- 사진 가로세로 비율 달라지는거 -->
+<!-- 화면넘어가지는거 -->
+<!-- 화면 전환될때 스크롤바 제일 위로 오도록 -->
+<!-- 구글맵주소 티나게 css  -->
+
 <template>
    <div class="Box d-md-flex justify-content-center">
       <swiper
@@ -10,40 +16,36 @@
       }"
       :modules="modules" 
       class="item-photo">
-        <swiper-slide>
-          <img src="../assets/images/food/가리비만두.jpg">
+        <swiper-slide v-if="foodDetail.path1">
+          <img :src="foodDetail.path1">
         </swiper-slide>
-        <swiper-slide>
-          <img src="../assets/images/food/가리비만두2.jpg">
+        <swiper-slide v-if="foodDetail.path2">
+          <img :src="foodDetail.path2">
         </swiper-slide>
-        <swiper-slide>
-          <img src="../assets/images/food/가리비만두.jpg">
+        <swiper-slide v-if="foodDetail.path3">
+          <img :src="foodDetail.path3">
         </swiper-slide>
       </swiper> 
       
       <div class="item-info col-md-6 d-flex flex-column justify-content-start">
-        <div class="title">
-          가리비가 통으로 들어간 가리비 만두
-        </div>
+        <div class="title">{{ foodDetail.title }}</div>
 
         <div class="content">
           <div class="menu row">
-            <div class="col-3 col-md-4">메뉴</div>
-            <div class="col-9 col-md-8">가리비만두 (干貝水餃）</div>
+            <div class="col-3">메뉴</div>
+            <div class="col-9 col-md-8">{{foodDetail.menu }}</div>
           </div>
           <div class="description row">
-            <div class="col-3 col-md-4">간략소개</div>
-            <div class="col-9 col-md-8">중독성 있어 계속 찾게되는 가리비만두!
-              가리비 하나가 통으로 들어가 있어 맛이 풍부하고 속도 촉촉해요.
-              가격도 한 알에 40원 밖에 안한답니다!</div>
+            <div class="col-3">간략소개</div>
+            <div class="col-9 col-md-8">{{ foodDetail.description }}</div>
           </div>
           <div class="place row">
-            <div class="col-3 col-md-4">가게</div>
-            <div class="col-9 col-md-8">巧之味手工水餃</div>
+            <div class="col-3">가게</div>
+            <div class="col-9 col-md-8">{{ foodDetail.place }}</div>
           </div>
           <div class="googleMap row">
-            <div class="col-3 col-md-4">구글맵</div>
-            <div class="col-9 col-md-8">~~~~~~~~~~~</div>
+            <div class="col-3">구글맵</div>
+            <div class="col-9 col-md-8" style="cursor:pointer;" >{{ foodDetail.googleMap }}</div>
           </div>
         </div>
 
@@ -74,6 +76,26 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
 
 export default{
+
+  data(){
+    return{
+      foodId:0,
+      foodDetail:{}
+    };
+  },
+  created(){
+    this.foodId = this.$route.query.food_id
+    this.getFoodDetail();
+  },
+  methods:{
+    async getFoodDetail(){
+      let foodDetail = await this.$api("/api/foodDetail",{param:[this.foodId]});
+      if(foodDetail.length>0){
+        this.foodDetail=foodDetail[0];
+      }
+    }
+  },
+
   components:{
     Swiper,
     SwiperSlide,

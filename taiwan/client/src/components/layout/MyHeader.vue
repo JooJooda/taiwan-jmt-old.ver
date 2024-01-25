@@ -1,3 +1,5 @@
+<!-- 로그인 기능 구현 엑스같다!!!!!!!!!!! -->
+
 <template>
 <nav class="navbar bg-body-secondary">
   <div class="container-fluid">
@@ -6,7 +8,6 @@
    <div class="d-flex flex-row justify-content-end">
       <router-link class="nav-link px-2" to="/">
         <font-awesome-icon :icon="['fas', 'circle-user']" class="d-block d-md-none" />
-        <span class="d-none d-md-block"> 로그인</span>
       </router-link>
       <router-link class="nav-link px-2" to="/foodlist">
         <font-awesome-icon :icon="['fas', 'utensils']" class="d-block d-md-none"/> 
@@ -23,6 +24,7 @@
 </template>
 
 <script>
+
 export default{
     name:"MyHeader",
 };

@@ -1,3 +1,6 @@
+<!-- 해결필요한 이슈들 -->
+<!-- 장바구니 버튼 생성 -->
+
 <template>
   <div class="title-area text-center p-5"> 
     대만 존맛탱굴 리스트
@@ -36,7 +39,7 @@
       <div class="container d-none d-md-flex justify-content-end">
           <button class="custom-swiper-button-prev d-none d-md-inline-block" style="margin-right: 3px;"> {{"<"}} </button>
           <button class="custom-swiper-button-next d-none d-md-inline-block" style="margin-left: 3px;"> {{">"}} </button>  
-        </div> 
+      </div> 
 
       <swiper
       :slidesPerView="2.5"
@@ -65,102 +68,30 @@
     }"
       :modules="modules" 
       class="RecommendBanner">
-
-        <swiper-slide>
-          <li class="box p-1 mb-4">
-            <div class="thumbnail mb-2">
-              <a href="">
-                <img src="../assets/images/food/가리비만두.jpg" width="100%">
-              </a>
-             </div>
+        <swiper-slide class="box p-1 mb-4" :key="i" v-for="(food,i) in rcmdList">
+          <a @click="goToDetail(food.id);" style="cursor:pointer;">
+            <swiper
+            :autoplay="{
+              delay:2000,
+            }"
+            :effect="'fade'"
+            :speed=1000
+            :modules="modules"
+            :class="mb-2">
+              <swiper-slide v-if="food.path1">
+                <img :src="food.path1" width="100%">
+              </swiper-slide>
+              <swiper-slide v-if="food.path2">
+                <img :src="food.path2" width="100%">
+              </swiper-slide>
+              <swiper-slide v-if="food.path3" >
+                <img :src="food.path3" width="100%">
+              </swiper-slide>
+            </swiper>
             <div class="comment">
-              <a href="">
-                <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>               
-                </ul>
-              </a>
+              <div class="name mb-1">{{ food.title }}</div>               
             </div>
-          </li>     
-        </swiper-slide>
-        <swiper-slide>
-          <li class="box p-1 mb-4">
-            <div class="thumbnail mb-2">
-              <a href="">
-                <img src="../assets/images/food/버터옥수수감자스틱.jpg" width="100%">
-              </a>
-             </div>
-            <div class="comment">
-              <a href="">
-                <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>             
-                </ul>
-              </a>
-            </div>
-          </li>     
-        </swiper-slide>
-        <swiper-slide>
-          <li class="box p-1 mb-4">
-            <div class="thumbnail mb-2">
-              <a href="">
-                <img src="../assets/images/food/버터옥수수감자스틱.jpg" width="100%">
-              </a>
-             </div>
-            <div class="comment">
-              <a href="">
-                <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>               
-                </ul>
-              </a>
-            </div>
-          </li>     
-        </swiper-slide>
-        <swiper-slide>
-          <li class="box p-1 mb-4">
-            <div class="thumbnail mb-2">
-              <a href="">
-                <img src="../assets/images/food/가리비만두.jpg" width="100%">
-              </a>
-             </div>
-            <div class="comment">
-              <a href="">
-                <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>             
-                </ul>
-              </a>
-            </div>
-          </li>     
-        </swiper-slide>
-        <swiper-slide>
-          <li class="box p-1 mb-4">
-            <div class="thumbnail mb-2">
-              <a href="">
-                <img src="../assets/images/food/버터옥수수감자스틱.jpg" width="100%">
-              </a>
-             </div>
-            <div class="comment">
-              <a href="">
-                <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>             
-                </ul>
-              </a>
-            </div>
-          </li>     
-        </swiper-slide>
-        <swiper-slide>
-          <li class="box p-1 mb-4">
-            <div class="thumbnail mb-2">
-              <a href="">
-                <img src="../assets/images/food/버터옥수수감자스틱.jpg" width="100%">
-              </a>
-             </div>
-            <div class="comment">
-              <a href="">
-                <ul class="comment-ele">
-                 <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>            
-                </ul>
-              </a>
-            </div>
-          </li>     
+          </a>
         </swiper-slide>
       </swiper>
     </div>
@@ -170,65 +101,31 @@
     </div>
 
     <ul class="item-list row row-cols-2 row-cols-md-4 pt-5">
-      <li class="box p-1 mb-4">
-        <div class="thumbnail mb-2">
-          <a href="">
-            <img src="../assets/images/food/패션후르츠 요거트 빙수.jpg" width="100%">
-          </a>
-         </div>
-        <div class="comment">
-          <a href="">
-            <ul class="comment-ele">
-             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>         
-            </ul>
-          </a>
-        </div>
-      </li>     
-
-      <li class="box p-1 mb-4">
-        <div class="thumbnail mb-2">
-          <a href="">
-            <img src="../assets/images/food/패션후르츠 요거트 빙수.jpg" width="100%">
-          </a>
-         </div>
-        <div class="comment">
-          <a href="">
-            <ul class="comment-ele">
-             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>            
-            </ul>
-          </a>
-        </div>
-      </li>     
-
-      <li class="box p-1 mb-4">
-        <div class="thumbnail mb-2">
-          <a href="">
-            <img src="../assets/images/food/패션후르츠 요거트 빙수.jpg" width="100%">
-          </a>
-         </div>
-        <div class="comment">
-          <a href="">
-            <ul class="comment-ele">
-             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>             
-            </ul>
-          </a>
-        </div>
-      </li>   
-
-      <li class="box p-1 mb-4">
-        <div class="thumbnail mb-2">
-          <a href="">
-            <img src="../assets/images/food/패션후르츠 요거트 빙수.jpg" width="100%">
-          </a>
-         </div>
-        <div class="comment">
-          <a href="">
-            <ul class="comment-ele">
-             <li class="name mb-1">가리비가 통으로 들어간 <span class="highlight">가리비만두</span></li>              
-            </ul>
-          </a>
-        </div>
-      </li>   
+      <li class="box p-1 mb-4" :key="i" v-for="(food,i) in foodList">
+        <a @click="goToDetail(food.id);" style="cursor:pointer;">
+          <swiper
+          :autoplay="{
+            delay:2000,
+          }" 
+          :effect="'fade'"
+          :speed=1000
+          :modules="modules"
+          :class="mb-2">
+            <swiper-slide v-if="food.path1">
+              <img :src="food.path1" width="100%">
+            </swiper-slide>
+            <swiper-slide v-if="food.path2">
+              <img :src="food.path2" width="100%">
+            </swiper-slide>
+            <swiper-slide v-if="food.path3" >
+              <img :src="food.path3" width="100%">
+            </swiper-slide>
+          </swiper> 
+          <div class="comment">
+            <div class="name mb-1">{{ food.title }}</div>         
+          </div>
+        </a>
+      </li>    
     </ul>
   </div>
 
@@ -242,11 +139,38 @@ import SearchBar from "../components/layout/SearchBar.vue";
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 
-import { Navigation, Scrollbar } from 'swiper/modules';
+import { Navigation, Scrollbar, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
 
 export default{
+
+  data(){
+    return{
+      rcmdList: [],
+      foodList: []
+    };
+  },
+  created(){
+    this.getRecommendation();
+    this.getFoodList();
+  },
+  methods:{
+    async getRecommendation(){
+      this.rcmdList = await this.$api("/api/recommendation",{});
+    },
+
+    async getFoodList(){
+     this.foodList = await this.$api("/api/foodList",{});
+    },
+
+    goToDetail(food_id){
+      this.$router.push({path:'/fooddetail', query:{food_id:food_id}});
+    }
+  },
+
   components:{
     SearchBar,
     Swiper,
@@ -254,7 +178,7 @@ export default{
   },
   setup() {
       return {
-        modules: [Navigation, Scrollbar],
+        modules: [Navigation, Scrollbar, Autoplay, EffectFade],
       };
   },
 }

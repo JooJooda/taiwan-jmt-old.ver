@@ -52,17 +52,17 @@
     margin:0;
 }
 
-.highlight{
+/* .highlight{
     font-weight: bold;
     font-size: larger;
-}
+} */
 
-.comment-ele{
+/* .comment-ele{
     list-style: none;
     font-size: 0.8rem;
     margin:0;
     padding:0;
-}
+} */
 
 .comment>a{
     text-decoration: none;

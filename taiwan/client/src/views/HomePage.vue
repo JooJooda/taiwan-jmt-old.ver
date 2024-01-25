@@ -6,7 +6,7 @@
   :autoplay="{
     delay: 7000,
   }"
-  :effect="fade"
+  :effect="'fade'"
   :speed= 1000
   :modules="modules" 
   class="HomePageBanner">

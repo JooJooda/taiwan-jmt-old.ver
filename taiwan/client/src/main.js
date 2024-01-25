@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import mixins from '../mixins'
 
 //bootstrap
 import 'bootstrap'
@@ -19,5 +20,6 @@ library.add(fab)
 
 createApp(App)
 .use(router)
+.mixin(mixins)
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount('#app')
