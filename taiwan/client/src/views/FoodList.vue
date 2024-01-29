@@ -12,22 +12,22 @@
     
     <ul class="nav nav-tabs justify-content-center mt-5" id="food-category">
      <li class="nav-item">
-       <a class="nav-link" aria-current="page" href="#">전체</a>
+       <a @click="getFoodList()" class="nav-link" aria-current="page">전체</a>
      </li>
      <li class="nav-item">
-       <a class="nav-link" href="#">식사</a>
+       <a @click="getMealList()" class="nav-link">식사</a>
      </li>
      <li class="nav-item">
-       <a class="nav-link" href="#">음료</a>
+       <a @click="getDrinkList()" class="nav-link">음료</a>
      </li>
      <li class="nav-item">
-       <a class="nav-link" href="#">디저트</a>
+       <a @click="getDessertList()" class="nav-link">디저트</a>
      </li>
      <li class="nav-item">
-       <a class="nav-link" href="#">야시장</a>
+       <a @click="getNightmarketList()" class="nav-link">야시장</a>
      </li>
      <li class="nav-item">
-       <a class="nav-link" href="#">기타</a>
+       <a @click="getExtraList()" class="nav-link">기타</a>
      </li>
     </ul>
 
@@ -68,9 +68,9 @@
     }"
       :modules="modules" 
       class="RecommendBanner">
-        <swiper-slide class="box p-1 mb-4" :key="i" v-for="(food,i) in rcmdList">
+        <swiper-slide v-for="(food, i) in recommendfoodList" :key="i" class="box p-1">
           <a @click="goToDetail(food.id);" style="cursor:pointer;">
-            <swiper
+            <swiper 
             :autoplay="{
               delay:2000,
             }"
@@ -87,10 +87,10 @@
               <swiper-slide v-if="food.path3" >
                 <img :src="food.path3" width="100%">
               </swiper-slide>
+              <div class="comment">
+                <div class="name mb-1">{{ food.title }}</div>               
+              </div>
             </swiper>
-            <div class="comment">
-              <div class="name mb-1">{{ food.title }}</div>               
-            </div>
           </a>
         </swiper-slide>
       </swiper>
@@ -101,7 +101,7 @@
     </div>
 
     <ul class="item-list row row-cols-2 row-cols-md-4 pt-5">
-      <li class="box p-1 mb-4" :key="i" v-for="(food,i) in foodList">
+      <li class="box p-1" :key="i" v-for="(food,i) in foodList">
         <a @click="goToDetail(food.id);" style="cursor:pointer;">
           <swiper
           :autoplay="{
@@ -120,10 +120,10 @@
             <swiper-slide v-if="food.path3" >
               <img :src="food.path3" width="100%">
             </swiper-slide>
+            <div class="comment">
+              <div class="name mb-1">{{ food.title }}</div>         
+            </div>
           </swiper> 
-          <div class="comment">
-            <div class="name mb-1">{{ food.title }}</div>         
-          </div>
         </a>
       </li>    
     </ul>
@@ -149,26 +149,50 @@ export default{
 
   data(){
     return{
-      rcmdList: [],
       foodList: []
     };
   },
+
   created(){
-    this.getRecommendation();
     this.getFoodList();
   },
-  methods:{
-    async getRecommendation(){
-      this.rcmdList = await this.$api("/api/recommendation",{});
-    },
 
+  computed:{
+    recommendfoodList(){
+      return this.foodList.filter(food=>food.is_rcmd);
+    }
+  },
+
+  methods:{
+    
     async getFoodList(){
      this.foodList = await this.$api("/api/foodList",{});
     },
 
     goToDetail(food_id){
       this.$router.push({path:'/fooddetail', query:{food_id:food_id}});
-    }
+    },
+
+     async getMealList(){
+      this.foodList = await this.$api("/api/mealList",{});
+      console.log(this.foodList);
+    },
+    
+    async getDrinkList(){
+      this.foodList = await this.$api("/api/drinkList",{});
+    },
+
+    async getDessertList(){
+      this.foodList = await this.$api("/api/dessertList",{});
+    },
+
+    async getNightmarketList(){
+      this.foodList = await this.$api("/api/nightmarketList",{});
+    },
+
+    async getExtraList(){
+      this.foodList = await this.$api("/api/extraList",{});
+    },
   },
 
   components:{
