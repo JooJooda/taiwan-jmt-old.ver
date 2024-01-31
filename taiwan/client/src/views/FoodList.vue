@@ -8,7 +8,18 @@
 
   <div class="container">
   
-    <SearchBar></SearchBar>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <form class="d-flex flex-row p-2 bg-body-tertiary" role="search">
+          <input v-model="searchTerm" class="form-control me-2" type="search" placeholder="찾으시는 존맛탱굴을 검색해보세요!" aria-label="Search">
+          <button @click="goToSearch()" class="btn btn-outline-success ratio-1x1" id="search" type="submit">
+            <font-awesome-icon :icon="['fas', 'magnifying-glass']" style="color: #198754;" />
+          </button>
+          </form>
+        </div>
+      </div>
+    </div>    
     
     <ul class="nav nav-tabs justify-content-center mt-5" id="food-category">
      <li class="nav-item">
@@ -88,7 +99,7 @@
                 <img :src="food.path3" width="100%">
               </swiper-slide>
               <div class="comment">
-                <div class="name mb-1">{{ food.title }}</div>               
+                <div class="name m-1">{{ food.title }}</div>               
               </div>
             </swiper>
           </a>
@@ -121,7 +132,7 @@
               <img :src="food.path3" width="100%">
             </swiper-slide>
             <div class="comment">
-              <div class="name mb-1">{{ food.title }}</div>         
+              <div class="name m-1">{{ food.title }}</div>         
             </div>
           </swiper> 
         </a>
@@ -132,7 +143,7 @@
 </template>
 
 <script>
-import SearchBar from "../components/layout/SearchBar.vue";
+// import SearchBar from "../components/layout/SearchBar.vue";
 
 
 //swiper
@@ -149,7 +160,8 @@ export default{
 
   data(){
     return{
-      foodList: []
+      foodList: [],
+      searchTerm: ''
     };
   },
 
@@ -160,7 +172,7 @@ export default{
   computed:{
     recommendfoodList(){
       return this.foodList.filter(food=>food.is_rcmd);
-    }
+    },
   },
 
   methods:{
@@ -171,6 +183,12 @@ export default{
 
     goToDetail(food_id){
       this.$router.push({path:'/fooddetail', query:{food_id:food_id}});
+    },
+
+    goToSearch(){
+      const searchTerm = this.searchTerm;
+      this.foodList = this.foodList.filter(food=>food.title.includes(searchTerm));
+      this.$router.push({path:'/searchpage', query:{searchTerm:this.searchTerm, foodList:JSON.stringify(this.foodList)}});
     },
 
      async getMealList(){
@@ -196,7 +214,7 @@ export default{
   },
 
   components:{
-    SearchBar,
+    // SearchBar,
     Swiper,
     SwiperSlide,
   },
