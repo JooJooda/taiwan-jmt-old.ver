@@ -13,7 +13,7 @@
         <font-awesome-icon :icon="['fas', 'utensils']" class="d-block d-md-none"/> 
         <span class="d-none d-md-block"> 존맛탱굴 리스트</span>
       </router-link>
-      <router-link class="nav-link px-2" to="/">
+      <router-link class="nav-link px-2" to="/foodcart">
         <font-awesome-icon :icon="['fas', 'cart-shopping']" class="d-block d-md-none" /> 
         <span class="d-none d-md-block"> 여행 장바구니</span>
       </router-link>

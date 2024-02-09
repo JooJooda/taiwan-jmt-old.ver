@@ -99,7 +99,7 @@
                 <img :src="food.path3" width="100%">
               </swiper-slide>
               <div class="comment">
-                <div class="name m-1">{{ food.title }}</div>               
+                <div class="name m-1">{{ food.title }}</div>        
               </div>
             </swiper>
           </a>
@@ -132,10 +132,14 @@
               <img :src="food.path3" width="100%">
             </swiper-slide>
             <div class="comment">
-              <div class="name m-1">{{ food.title }}</div>         
+              <div class="name m-1">{{ food.title }}</div>       
             </div>
           </swiper> 
         </a>
+        <button type="button" class="cartBtn btn btn-outline-secondary" @click="addToCart(food.id)">
+          <font-awesome-icon :icon="['fas', 'cart-shopping']" size="xs"/> 
+          <span style="font-size:0.8rem"> 장바구니 담기</span>
+        </button>    
       </li>    
     </ul>
   </div>
@@ -189,6 +193,11 @@ export default{
       const searchTerm = this.searchTerm;
       this.foodList = this.foodList.filter(food=>food.title.includes(searchTerm));
       this.$router.push({path:'/searchpage', query:{searchTerm:this.searchTerm, foodList:JSON.stringify(this.foodList)}});
+    },
+
+    //장바구니 담기 기능
+    addToCart(foodId){
+      this.$store.commit('addToCart', foodId);
     },
 
      async getMealList(){

@@ -3,6 +3,7 @@ import HomePage from '../views/HomePage.vue'
 import FoodList from '../views/FoodList.vue'
 import FoodDetail from '../views/FoodDetail.vue'
 import SearchPage from '../views/SearchPage.vue'
+import FoodCart from '../views/FoodCart.vue'
 
 const routes = [
   {
@@ -27,6 +28,12 @@ const routes = [
     path: '/searchpage',
     name: 'SearchPage',
     component: SearchPage
+  },
+
+  {
+    path: '/foodcart',
+    name: 'FoodCart',
+    component: FoodCart
   }
 ]
 

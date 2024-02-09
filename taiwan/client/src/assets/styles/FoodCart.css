@@ -1,0 +1,15 @@
+.title-area{
+    font-size: 1.4rem;
+}
+
+.cart{
+    list-style: none;
+}
+
+.info{
+    text-align: left;
+}
+
+.title,.menu,.description,.place,.googleMap{
+    font-size: 0.8rem;
+}

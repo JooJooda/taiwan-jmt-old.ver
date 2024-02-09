@@ -91,7 +91,7 @@ export default{
     async getFoodDetail(){
       let foodDetail = await this.$api("/api/foodDetail",{param:[this.foodId]});
       if(foodDetail.length>0){
-        this.foodDetail=foodDetail[0];
+        this.foodDetail = foodDetail[0];
       }
     }
   },

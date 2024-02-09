@@ -38,12 +38,20 @@
 .swiper-scrollbar{
     display:block;
 }       
+
+.cartBtn{
+    width:10rem;
+}
 }
 
 @media screen and (min-width:768px){
 .swiper-scrollbar{
     display:none;
-}       
+}
+
+.cartBtn{
+    width:8rem;
+}
 }
 
 .item-list{
@@ -68,3 +76,4 @@
     text-decoration: none;
     color: black;
 }
+
