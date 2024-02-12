@@ -4,12 +4,78 @@
 
 .cart{
     list-style: none;
+    
+}
+
+.thumbnail{
+    padding:0!important;
 }
 
 .info{
     text-align: left;
+    padding: 0!important;
 }
 
-.title,.menu,.description,.place,.googleMap{
-    font-size: 0.8rem;
+.googleMapBtn a{
+    text-decoration: none;
+    color:inherit;
 }
+
+.emptyCart{
+    padding: 10rem;
+    font-size: 1.2rem;
+}
+
+.nav-underline .nav-link{
+    --bs-nav-link-color: black!important;
+    --bs-nav-link-active-color: #0d6efd!important;
+}
+
+@media screen and (max-width:992px){
+ 
+    .cartTitle{
+        font-weight:bolder;
+        font-size: 0.9rem;
+        margin: 0.4rem;
+    }
+
+    .cartDescription{
+        font-size: 0.8rem;
+        margin: 0.4rem;
+    }
+    
+    .googleMapBtn,.deleteBtn{
+        font-size:0.7rem!important;
+    }
+
+    .deleteAllBtn{
+        font-size: 0.75rem!important;
+    }
+
+}
+
+@media screen and (min-width:992px){
+    .cartTitle{
+        font-weight:bolder;
+        font-size: 1.2rem;
+        margin: 0.7rem;
+    }
+
+    .cartDescription{
+        font-size: 1.1rem;
+        margin: 0.7rem;
+    }
+    
+    .googleMapBtn,.deleteBtn{
+        font-size:1rem!important;
+    }
+
+    .deleteAllBtn{
+        font-size: 1.05rem!important;
+    }
+
+}
+
+
+
+

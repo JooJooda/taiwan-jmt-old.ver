@@ -1,7 +1,7 @@
 <!-- 로그인 기능 구현 엑스같다!!!!!!!!!!! -->
 
 <template>
-<nav class="navbar bg-body-secondary">
+<nav class="navbar bg-body-secondary fixed-top">
   <div class="container-fluid">
     <router-link class="nav-link px-2" to="/" style="font-weight: bolder;">Home</router-link>
   

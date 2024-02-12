@@ -90,6 +90,7 @@ export default{
 </script>
 
 <style scoped>
-
+  @import '../assets/styles/SearchPage.css';
+  @import '../assets/styles/responsive.css';
 </style>
 

@@ -21,7 +21,7 @@
       </div>
     </div>    
     
-    <ul class="nav nav-tabs justify-content-center mt-5" id="food-category">
+    <ul class="nav nav-underline justify-content-center mt-5" id="food-category">
      <li class="nav-item">
        <a @click="getFoodList()" class="nav-link" aria-current="page">전체</a>
      </li>
@@ -46,7 +46,7 @@
       B e s t
     </div>
 
-    <div class="Recommend mb-3 pb-4 border-bottom">
+    <div class="Recommend mb-3 pb-4 mx-md-3 mx-lg-5 border-bottom">
       <div class="container d-none d-md-flex justify-content-end">
           <button class="custom-swiper-button-prev d-none d-md-inline-block" style="margin-right: 3px;"> {{"<"}} </button>
           <button class="custom-swiper-button-next d-none d-md-inline-block" style="margin-left: 3px;"> {{">"}} </button>  
@@ -111,7 +111,7 @@
       L i s t
     </div>
 
-    <ul class="item-list row row-cols-2 row-cols-md-4 pt-5">
+    <ul class="item-list row row-cols-2 row-cols-md-4 pt-5 mx-md-3 mx-lg-5">
       <li class="box p-1" :key="i" v-for="(food,i) in foodList">
         <a @click="goToDetail(food.id);" style="cursor:pointer;">
           <swiper
@@ -136,10 +136,24 @@
             </div>
           </swiper> 
         </a>
-        <button type="button" class="cartBtn btn btn-outline-secondary" @click="addToCart(food.id)">
+        <button type="button" class="cartBtn btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal" @click="addToCart(food.id)">
           <font-awesome-icon :icon="['fas', 'cart-shopping']" size="xs"/> 
           <span style="font-size:0.8rem"> 장바구니 담기</span>
-        </button>    
+        </button> 
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+           <div class="modal-content">
+            <div class="modal-body">
+              <div v-if="isInCart">이미 여행 장바구니에 존재합니다</div>
+              <div v-else-if="food.id">여행 장바구니에 성공적으로 담겼습니다</div>
+              <div v-else>오류 발생으로 실패했습니다</div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">확인</button>
+            </div>
+           </div>
+          </div>
+        </div>   
       </li>    
     </ul>
   </div>
@@ -177,6 +191,9 @@ export default{
     recommendfoodList(){
       return this.foodList.filter(food=>food.is_rcmd);
     },
+    isInCart(){
+      return this.$store.state.isInCart;
+    }
   },
 
   methods:{

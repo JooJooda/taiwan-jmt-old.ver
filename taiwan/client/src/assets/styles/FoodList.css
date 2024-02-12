@@ -60,6 +60,14 @@
     margin:0;
 }
 
+.modal-footer{
+    border-top:none!important;
+}
+
+.nav-underline .nav-link{
+    --bs-nav-link-color: black!important;
+    --bs-nav-link-active-color: #0d6efd!important;
+}
 /* .highlight{
     font-weight: bold;
     font-size: larger;
