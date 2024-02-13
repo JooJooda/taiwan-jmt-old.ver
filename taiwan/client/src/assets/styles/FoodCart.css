@@ -2,6 +2,12 @@
     font-size: 1.4rem;
 }
 
+.cart-notice{
+    font-size:0.7rem;
+    text-align: left!important;
+    color: gray;
+}
+
 .cart{
     list-style: none;
     
@@ -59,6 +65,10 @@
         font-weight:bolder;
         font-size: 1.2rem;
         margin: 0.7rem;
+    }
+
+    .cart-notice{
+        margin-left:2.5rem;
     }
 
     .cartDescription{

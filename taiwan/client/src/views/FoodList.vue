@@ -88,7 +88,7 @@
             :effect="'fade'"
             :speed=1000
             :modules="modules"
-            :class="mb-2">
+            class="mb-2">
               <swiper-slide v-if="food.path1">
                 <img :src="food.path1" width="100%">
               </swiper-slide>
@@ -121,7 +121,7 @@
           :effect="'fade'"
           :speed=1000
           :modules="modules"
-          :class="mb-2">
+          class="mb-2">
             <swiper-slide v-if="food.path1">
               <img :src="food.path1" width="100%">
             </swiper-slide>
@@ -179,12 +179,16 @@ export default{
   data(){
     return{
       foodList: [],
-      searchTerm: ''
+      searchTerm: '',
+      expirationDate : {}
     };
   },
 
   created(){
+  
     this.getFoodList();
+    this.$store.state.foodCart = this.$cookies.get('foodCart');
+
   },
 
   computed:{
@@ -215,6 +219,9 @@ export default{
     //장바구니 담기 기능
     addToCart(foodId){
       this.$store.commit('addToCart', foodId);
+      this.$cookies.set('foodCart', this.$store.state.foodCart);
+      const test = this.$cookies.get('foodCart')
+      console.log("담기 성공",test)
     },
 
      async getMealList(){

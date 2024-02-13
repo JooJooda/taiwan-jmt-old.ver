@@ -4,6 +4,9 @@ import router from './router'
 import mixins from '../mixins'
 import store from './store'
 
+//cookie
+import VueCookies from "vue-cookies"
+
 //bootstrap
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -18,10 +21,15 @@ library.add(fas)
 library.add(far)
 library.add(fab)
 
-
 createApp(App)
 .use(router)
 .mixin(mixins)
 .use(store)
+.use(VueCookies, {
+    expires: "365d", 
+    secure: true,
+})
 .component('font-awesome-icon', FontAwesomeIcon)
 .mount('#app')
+
+

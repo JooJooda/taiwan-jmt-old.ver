@@ -9,6 +9,7 @@ const store = createStore({
     },
 
     mutations:{
+
         //장바구니 담기 기능
         addToCart(state, foodId){
             state.isInCart=false;
@@ -21,7 +22,7 @@ const store = createStore({
                 console.log("이미 존재")
             }
         },
-       
+
         //장바구니 삭제 기능
         deleteFood(state, foodId){
             const index = state.foodCart.findIndex(item => item === foodId);

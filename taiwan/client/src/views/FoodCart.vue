@@ -1,11 +1,16 @@
 //쿠키 추가해야함
 
 <template>
-  <div class="title-area text-center p-5"> 
+  <div class="title-area text-center p-4"> 
    대만여행 장바구니
   </div>
 
    <div class="container">
+    <div class="container2">
+      <div class="cart-notice p-2">
+      * 장바구니는 1년간 유지됩니다
+      </div>
+
      <ul class="nav nav-underline justify-content-center mt-1 mb-3" id="food-category">
        <li class="nav-item">
          <a class="nav-link" aria-current="page">전체</a>
@@ -60,7 +65,8 @@
           <font-awesome-icon :icon="['far', 'face-flushed']" /> 장바구니가 비었습니다 
        </div>
      </div>
-    </div>   
+    </div>
+   </div>   
 </template>
 
 <script>
@@ -80,18 +86,19 @@ export default{
     },
 
     created(){
+        this.$store.state.foodCart = this.$cookies.get('foodCart');
         this.showInCart();
     },
     
     methods:{
        async showInCart(){
         this.cartList = [];
-         for(let id of this.foodId){
+        for(let id of this.foodId){
           let bucket = await this.$api("/api/foodDetail",{param:[id]});
-          if(bucket.length > 0){
-             this.cartList.push(bucket[0]);
-          }
-         }
+           if(bucket.length > 0){
+              this.cartList.push(bucket[0]);
+           }
+        }
          console.log(this.cartList)
         },
 
@@ -103,15 +110,15 @@ export default{
         deleteFood(food_id){
           console.log(food_id);
           this.$store.commit('deleteFood', food_id); 
+          this.$cookies.set('foodCart', this.$store.state.foodCart);
           this.showInCart();
         },
 
         clearCart(){
           this.$store.commit('clearCart');
-          this.cartList = [];
+          this.$cookies.set('foodCart', this.$store.state.foodCart);
           this.showInCart();
-        }
-
+        },
 
     },
 
