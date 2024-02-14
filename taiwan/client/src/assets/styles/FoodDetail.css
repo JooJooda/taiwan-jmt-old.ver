@@ -12,42 +12,116 @@
     --swiper-scrollbar-border-radius: 0;
 }
 
-
-.cart-button{
-    margin:1.8rem;
-    padding:1.5rem;    
-    border:0;
-    font-size:1.4rem;
-    
+.detailBtn a{
+    text-decoration: none;
+    color:inherit;
 }
 
 .item-info{
     text-align: left;
 }
 
-.title{
-    font-size:1.6rem;
-    font-weight: bolder;
-    margin:1.8rem;
+@media screen and (max-width:400px){
+    .menu,.description,.place,.recommendOrder{
+        margin-bottom: 0.9rem;
+        font-size: 1.1rem;
+    }
+    .detailBtn{
+        font-size: 0.9rem!important;
+    }
+    .title{
+        font-size:1.2rem;
+        font-weight: bolder;
+        margin:1.4rem;
+    }
+    .content{
+        margin:1.4rem;
+    }
+    
 }
 
-.content{
-    margin:1.8rem;
+@media screen and (min-width:400px) and (max-width:576px){
+    .menu,.description,.place,.recommendOrder{
+        margin-bottom: 0.9rem;
+        font-size: 1.2rem;
+    }
+    .detailBtn{
+        font-size: 1rem!important;
+    }
+    .title{
+        font-size:1.5rem;
+        font-weight: bolder;
+        margin:1.4rem;
+    }
+    .content{
+        margin:1.4rem;
+    }
+    
 }
 
-.menu,.description,.place,.googleMap{
-    margin-bottom: 1rem;
-    font-size:1.3rem;
+@media screen and (min-width:576px) and (max-width:768px){
+    .menu,.description,.place,.recommendOrder{
+        margin-bottom: 1rem;
+        font-size:1.3rem;
+    }
+    .detailBtn{
+        font-size: 1.1rem!important;
+    }
+    .title{
+        font-size:1.6rem;
+        font-weight: bolder;
+        margin:1.4rem;
+    }
+    .content{
+        margin:1.4rem;
+    }
+
 }
 
-#detail,#order{
-    border:1px solid rgba(0, 0, 0, 0.1);
-    padding:0.6rem;
-    font-size: 1rem;
+@media screen and (min-width:768px) and (max-width:1024px){
+    .menu,.description,.place,.recommendOrder{
+        margin-bottom: 1.5rem;
+        font-size:0.9rem;
+    }
+    .detailBtn{
+        font-size: 0.7rem!important;
+    }
+    .title{
+        font-size:1.1rem;
+        font-weight: bolder;
+        margin:1.5rem;
+    }
+    .content{
+        margin:1rem;
+    }
+    .item-info{
+        margin-left: 2rem;
+    } 
+
 }
 
 @media screen and (min-width:1024px){
-  .item-photo,.item-info{
-    margin:3rem;
-  }
+    .menu,.description,.place,.recommendOrder{
+        margin-bottom: 1.7rem;
+        font-size:1.1rem;
+    }
+    .detailBtn{
+        font-size: 0.9rem!important;
+    }
+    .title{
+        font-size:1.3rem;
+        font-weight: bolder;
+        margin:1.7rem;
+    }
+    .content{
+        margin:1.2rem;
+    }
+    .item-info{
+        margin-left: 2rem;
+    } 
+
 }
+
+
+
+

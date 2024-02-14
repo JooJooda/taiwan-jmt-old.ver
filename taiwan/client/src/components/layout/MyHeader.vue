@@ -1,14 +1,9 @@
-<!-- 로그인 기능 구현 엑스같다!!!!!!!!!!! -->
-
 <template>
 <nav class="navbar bg-body-secondary fixed-top">
   <div class="container-fluid">
     <router-link class="nav-link px-2" to="/" style="font-weight: bolder;">Home</router-link>
   
    <div class="d-flex flex-row justify-content-end">
-      <router-link class="nav-link px-2" to="/">
-        <font-awesome-icon :icon="['fas', 'circle-user']" class="d-block d-md-none" />
-      </router-link>
       <router-link class="nav-link px-2" to="/foodlist">
         <font-awesome-icon :icon="['fas', 'utensils']" class="d-block d-md-none"/> 
         <span class="d-none d-md-block"> 존맛탱굴 리스트</span>

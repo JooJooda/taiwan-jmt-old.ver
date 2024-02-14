@@ -111,7 +111,7 @@
       L i s t
     </div>
 
-    <ul class="item-list row row-cols-2 row-cols-md-4 pt-5 mx-md-3 mx-lg-5">
+    <ul class="item-list row row-cols-2 row-cols-sm-3 row-cols-md-4 pt-5 mx-md-3 mx-lg-5">
       <li class="box p-1" :key="i" v-for="(food,i) in foodList">
         <a @click="goToDetail(food.id);" style="cursor:pointer;">
           <swiper
@@ -180,7 +180,6 @@ export default{
     return{
       foodList: [],
       searchTerm: '',
-      expirationDate : {}
     };
   },
 

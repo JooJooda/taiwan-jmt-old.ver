@@ -35,7 +35,7 @@
   <div class="container-fluid text-center">
     <div class="row">
       <div class="title-area col-12 p-5">
-        대만에서 뭐 먹지?
+        대만여행 가는 사람들 주목!
       </div>
       <div class="About">
         대충 about에 넣을 소개글
@@ -45,7 +45,11 @@
 
   <div class="container">
     <div class="row d-flex flex-row justify-content-center m-1 m-md-2">
-      <button type="button" class="btn btn-outline-danger col-8 col-sm-6 col-xl-4 m-3" id="food"> 대만 음식 쇼핑하러가기</button>
+      <router-link to="/foodlist">
+      <button type="button" class="btn btn-outline-secondary col-7 col-sm-6 col-lg-5 m-5 p-2"> 
+        대만 존맛탱굴 리스트 보러가기
+      </button> 
+      </router-link>
     </div>
   </div>
     
