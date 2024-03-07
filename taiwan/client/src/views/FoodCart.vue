@@ -13,49 +13,51 @@
 
      <ul class="nav nav-underline justify-content-center mt-1 mb-3" id="food-category">
        <li class="nav-item">
-         <a class="nav-link" aria-current="page">전체</a>
+         <a @click="getFoodListInCart()" >전체</a>
        </li>
        <li class="nav-item">
-         <a class="nav-link">식사</a>
+         <a @click="getMealListInCart()">식사</a>
        </li>
        <li class="nav-item">
-         <a class="nav-link">음료</a>
+         <a @click="getDrinkListInCart()">음료</a>
        </li>
        <li class="nav-item">
-         <a class="nav-link">디저트</a>
+         <a @click="getDessertListInCart()">디저트</a>
        </li>
        <li class="nav-item">
-         <a class="nav-link">야시장</a>
+         <a @click="getNightmarketListInCart()">야시장</a>
        </li>
        <li class="nav-item">
-         <a class="nav-link">기타</a>
+         <a @click="getExtraListInCart()">기타</a>
        </li>
      </ul>
      <div class="cartListBox row mx-md-3 mx-lg-5">
        <div class="cartListBoxTitle bg-body-secondary border col-12"> 나의 대만 존맛탱굴 리스트</div>
        <div v-if="cartList.length>0">
          <li class="cart col-12" :key="i" v-for="(food,i) in cartList">
-           <div class="row p-1 border">
-             <div class="thumbnail col-3">
-               <a @click="goToDetail(food.id)" style="cursor:pointer;">
-                 <img :src="food.path1" width="60%">
-               </a>  
-             </div>
-             <div class="info col-9 d-flex flex-column justify-content-around">
-               <a @click="goToDetail(food.id)" style="cursor:pointer;">
-                <div class="cartTitle">{{ food.title }}</div>
-                <div class="cartDescription">{{ food.description }}</div>
-               </a>
-               <div class="cartBtns">
-                  <button type="button" class="googleMapBtn btn btn-outline-secondary m-1 p-1">
-                    <a :href="food.googleMap">구글맵에 저장하기</a>
-                  </button>
-                  <button type="button" class="deleteBtn btn btn-outline-secondary m-1 p-1">
-                    <a @click="deleteFood(food.id)">삭제</a>
-                  </button>
-               </div>
-             </div>
-           </div> 
+           <div v-if="keyNumber==0 || food.category_id==keyNumber">
+              <div class="row p-1 border">
+                <div class="thumbnail col-3">
+                  <a @click="goToDetail(food.id)" style="cursor:pointer;">
+                    <img :src="food.path1" width="60%">
+                  </a>  
+                </div>
+                <div class="info col-9 d-flex flex-column justify-content-around">
+                  <a @click="goToDetail(food.id)" style="cursor:pointer;">
+                  <div class="cartTitle">{{ food.title }}</div>
+                  <div class="cartDescription">{{ food.description }}</div>
+                  </a>
+                  <div class="cartBtns">
+                    <button type="button" class="googleMapBtn btn btn-outline-secondary m-1 p-1">
+                      <a :href="food.googleMap">구글맵에 저장하기</a>
+                    </button>
+                    <button type="button" class="deleteBtn btn btn-outline-secondary m-1 p-1">
+                      <a @click="deleteFood(food.id)">삭제</a>
+                    </button>
+                  </div>
+                </div>
+              </div> 
+           </div>
          </li>
         <button type="button" class="deleteAllBtn btn btn-outline-secondary m-2 p-2">
           <a @click="clearCart()"> 전체삭제</a>
@@ -76,6 +78,7 @@ export default{
     data(){
         return{
             cartList:[], //foodDetail 모든 정보
+            keyNumber:0,
         };
     },
 
@@ -120,6 +123,32 @@ export default{
           this.showInCart();
         },
 
+        //장바구니 내 카테고리 기능
+        getFoodListInCart(){
+         this.keyNumber=0; 
+         this.showInCart();
+        },
+        getMealListInCart(){
+         this.keyNumber=1;
+         this.showInCart();
+        },
+        getDrinkListInCart(){
+         this.keyNumber=4;
+         this.showInCart();
+        },
+        getDessertListInCart(){
+         this.keyNumber=2;
+         this.showInCart();
+        },
+        getNightmarketListInCart(){
+         this.keyNumber=5;
+         this.showInCart();
+        },
+        getExtraListInCart(){
+         this.keyNumber=3;
+         this.showInCart();
+        }
+        
     },
 
 }
