@@ -26,6 +26,9 @@
           <swiper-slide v-if="foodDetail.path3">
             <img :src="foodDetail.path3">
           </swiper-slide>
+          <swiper-slide v-if="foodDetail.path4">
+            <img :src="foodDetail.path4">
+          </swiper-slide>
        </swiper> 
       
        <div class="item-info col-md-6 d-flex flex-column justify-content-start">

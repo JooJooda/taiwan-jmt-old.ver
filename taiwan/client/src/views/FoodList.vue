@@ -43,7 +43,7 @@
     </ul>
 
     <div class="text-center mt-5" id="recmd-title">
-      B e s t
+      R e c o m m e n d a t i o n
     </div>
 
     <div class="Recommend mb-3 pb-4 mx-md-3 mx-lg-5 border-bottom">
@@ -97,6 +97,9 @@
               </swiper-slide>
               <swiper-slide v-if="food.path3" >
                 <img :src="food.path3" width="100%">
+              </swiper-slide>
+              <swiper-slide v-if="food.path4" >
+                <img :src="food.path4" width="100%">
               </swiper-slide>
               <div class="comment">
                 <div class="name m-1">{{ food.title }}</div>        
@@ -203,6 +206,7 @@ export default{
     
     async getFoodList(){
      this.foodList = await this.$api("/api/foodList",{});
+     console.log(this.foodList);
     },
 
     goToDetail(food_id){
@@ -230,6 +234,7 @@ export default{
     
     async getDrinkList(){
       this.foodList = await this.$api("/api/drinkList",{});
+      console.log(this.foodList);
     },
 
     async getDessertList(){
