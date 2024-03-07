@@ -135,7 +135,7 @@
               <img :src="food.path3" width="100%">
             </swiper-slide>
             <div class="comment">
-              <div class="name m-1">{{ food.title }}</div>       
+              <div v-html="boldLastWord(food.title)" class="name m-1"></div>       
             </div>
           </swiper> 
         </a>
@@ -247,6 +247,13 @@ export default{
 
     async getExtraList(){
       this.foodList = await this.$api("/api/extraList",{});
+    },
+
+    //마지막 핵심단어 굵게
+    boldLastWord(foodTitle){
+      const words = foodTitle.split((" "));
+      const lastWord = words.pop();
+      return words.join(" ") + " <strong>" + lastWord + "</strong>";
     },
   },
 

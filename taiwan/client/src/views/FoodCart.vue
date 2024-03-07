@@ -43,8 +43,8 @@
                   </a>  
                 </div>
                 <div class="info col-9 d-flex flex-column justify-content-around">
-                  <a @click="goToDetail(food.id)" style="cursor:pointer;">
-                  <div class="cartTitle">{{ food.title }}</div>
+                  <a @click="goToDetail(food.id)" style="cursor:pointer;">  
+                  <div v-html="boldLastWord(food.title)" class="cartTitle"></div>
                   <div class="cartDescription">{{ food.description }}</div>
                   </a>
                   <div class="cartBtns">
@@ -147,7 +147,14 @@ export default{
         getExtraListInCart(){
          this.keyNumber=3;
          this.showInCart();
-        }
+        },
+
+        //마지막 핵심단어 굵게
+        boldLastWord(foodTitle){
+          const words = foodTitle.split((" "));
+          const lastWord = words.pop();
+          return words.join(" ") + " <strong>" + lastWord + "</strong>";
+        },
         
     },
 

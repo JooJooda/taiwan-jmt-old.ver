@@ -40,7 +40,6 @@
 @media screen and (max-width:992px){
  
     .cartTitle{
-        font-weight:bolder;
         font-size: 0.9rem;
         margin: 0.4rem;
     }
@@ -62,7 +61,6 @@
 
 @media screen and (min-width:992px){
     .cartTitle{
-        font-weight:bolder;
         font-size: 1.2rem;
         margin: 0.7rem;
     }
