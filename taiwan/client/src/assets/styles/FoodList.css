@@ -54,6 +54,11 @@
     color: black;
 }
 
+.pageNumbers{
+    display: inline-block;
+    margin: 0.8rem;
+}
+
 @media screen and (max-width:768px){
     .swiper-scrollbar{
         display:block;

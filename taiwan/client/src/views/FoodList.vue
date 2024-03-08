@@ -115,7 +115,7 @@
     </div>
 
     <ul class="item-list row row-cols-2 row-cols-sm-3 row-cols-md-4 pt-5 mx-md-3 mx-lg-5">
-      <li class="box p-1" :key="i" v-for="(food,i) in foodList">
+      <li class="box p-1" :key="i" v-for="(food,i) in paginatedFoods">
         <a @click="goToDetail(food.id);" style="cursor:pointer;">
           <swiper
           :autoplay="{
@@ -161,6 +161,18 @@
     </ul>
   </div>
 
+  <div class="paginationBox m-3" >
+    <div v-if="totalPages <= 1" style="cursor:pointer;" class="pageNumbers">
+     1
+    </div>
+    <div v-else>
+      <div v-for="pageNumber in totalPages" :key="pageNumber" class="pageNumbers" style="cursor:pointer;" @click="changePage(pageNumber)">
+        {{ pageNumber }}
+      </div>
+    </div>
+  </div>
+
+
 </template>
 
 <script>
@@ -182,6 +194,8 @@ export default{
   data(){
     return{
       foodList: [],
+      foodsPerPage:15,
+      currentPage:1,      
       searchTerm: '',
     };
   },
@@ -199,6 +213,14 @@ export default{
     },
     isInCart(){
       return this.$store.state.isInCart;
+    },
+    totalPages(){
+      return Math.ceil(this.foodList.length/this.foodsPerPage);
+    },
+    paginatedFoods(){
+      const startIndex = (this.currentPage - 1) * this.foodsPerPage;
+      const endIndex = startIndex + this.foodsPerPage;
+      return this.foodList.slice(startIndex,endIndex);
     }
   },
 
@@ -255,6 +277,15 @@ export default{
       const lastWord = words.pop();
       return words.join(" ") + " <strong>" + lastWord + "</strong>";
     },
+
+    //페이지 전환
+    changePage(pageNumber){
+      this.currentPage = pageNumber;
+      window.scrollTo({ //스크롤바를 상단으로 
+        top:0,
+        behavior:'smooth'
+      })
+    }
   },
 
   components:{

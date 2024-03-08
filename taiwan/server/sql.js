@@ -1,9 +1,9 @@
 module.exports={
     foodList:{
         query:
-        `SELECT t1.id,t1.title,t2.path1,t2.path2,t2.path3,t3.category1,t4.*
-        FROM food_info t1, image t2, category t3, recommendation t4
-        WHERE t1.id=t2.food_id AND t1.category_id=t3.id AND t4.rcmd_id=t1.id`
+        `SELECT t1.id,t1.title,t2.path1,t2.path2,t2.path3,t2.path4,t3.*
+        FROM food_info t1, image t2, recommendation t3
+        WHERE t1.id=t2.food_id AND t3.rcmd_id=t1.id`
     },
 
     mealList:{
