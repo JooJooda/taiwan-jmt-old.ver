@@ -194,7 +194,7 @@ export default{
   data(){
     return{
       foodList: [],
-      foodsPerPage:15,
+      foodsPerPage:12,
       currentPage:1,      
       searchTerm: '',
     };
